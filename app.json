@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "react-native-nft",
+    "slug": "react-native-nft",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
