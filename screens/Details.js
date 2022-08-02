@@ -1,39 +1,34 @@
-import { View, Text, SafeAreaView, Image, Statusbar, FlatList } from "react-native"
+import React from "react";
+import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native";
 
-import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants"
-import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from "../components"
-import React from "react"
-import { StatusBar } from 'expo-status-bar';
+import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
+import { CircleButton, RectButton, SubInfo, DetailsDesc, DetailsBid, FocusedStatusBar } from "../components";
 
 const DetailsHeader = ({ data, navigation }) => (
-    <View style={{width:'100%', height: 373}}>
-        <Image 
-            source={data.image}
-            resizeMode="cover"
-            style={{ width: "100%", height: "100%" }}
-        />
+  <View style={{ width: "100%", height: 373 }}>
+    <Image
+      source={data.image}
+      resizeMode="cover"
+      style={{ width: "100%", height: "100%" }}
+    />
 
-        <CircleButton
-            imgUrl={assets.left}
-            handlePress={()=> navigation.goBack()}
-            left={15}
-            top={StatusBar.currentHeight + 10}
-        />
-        <CircleButton
-            imgUrl={assets.heart} 
-            right={15}
-            top={StatusBar.currentHeight + 10}
-        />
-    </View>
-)
+    <CircleButton
+      imgUrl={assets.left}
+      handlePress={() => navigation.goBack()}
+      left={15}
+      top={StatusBar.currentHeight + 10}
+    />
+
+    <CircleButton
+      imgUrl={assets.heart}
+      right={15}
+      top={StatusBar.currentHeight + 10}
+    />
+  </View>
+);
 
 const Details = ({ route, navigation }) => {
-  const { data } = route.params 
-
-//   console.log(` ---------------------`)
-//   console.log(data)
-//   console.log(` ---------------------`)
- 
+  const { data } = route.params;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -92,4 +87,4 @@ const Details = ({ route, navigation }) => {
   );
 };
 
-export default Details
+export default Details;
